@@ -30,7 +30,6 @@ import com.pawka.weatherapp1221.domain.models.WeatherModel
 import java.text.SimpleDateFormat
 import java.util.Date
 
-@SuppressLint("SimpleDateFormat")
 @Composable
 fun WeatherCard(
     weather: WeatherModel,
