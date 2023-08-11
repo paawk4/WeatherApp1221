@@ -8,13 +8,16 @@ class RetrofitService {
 
     fun getWeather(): Result<WeatherModel> {
         val callResponse = api.getWeather()
-        val response = callResponse.execute()
-        if (response.isSuccessful) {
-            response.body()?.let {
-                return Result.Success(it)
+        try {
+            val response = callResponse.execute()
+            if (response.isSuccessful) {
+                response.body()?.let {
+                    return Result.Success(it)
+                }
             }
+            return Result.Failure(Exception(response.message()))
+        } catch (_: Exception) {
+            return Result.Failure(Exception("no internet connection"))
         }
-
-        return Result.Failure(Exception(response.message()))
     }
 }

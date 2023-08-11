@@ -8,7 +8,7 @@ import retrofit2.http.Headers
 
 interface RetrofitServiceApi {
 
-    @GET("forecast.json?&q=moscow&days=5&key=${API_KEY}")
+    @GET("forecast.json?q=moscow&days=5&dt=dd.MM&lang=ru&key=$API_KEY")
     fun getWeather(): Call<WeatherModel>
 
     companion object {

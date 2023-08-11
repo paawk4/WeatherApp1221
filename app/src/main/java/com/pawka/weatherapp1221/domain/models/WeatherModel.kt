@@ -1,6 +1,10 @@
 package com.pawka.weatherapp1221.domain.models
 
+import com.google.gson.annotations.SerializedName
+
 data class WeatherModel(
-    val current: Current,
-    val forecast: Forecast
+    @SerializedName("current")
+    val currentWeather: CurrentWeather,
+    @SerializedName("forecast")
+    val forecastWeather: ForecastWeather
 )

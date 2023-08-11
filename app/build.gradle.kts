@@ -67,6 +67,8 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
+    implementation("androidx.compose.runtime:runtime-livedata:1.5.0")
+
     // retrofit
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
@@ -85,4 +87,5 @@ dependencies {
     //coil
     implementation("io.coil-kt:coil-compose:2.4.0")
 
+    implementation ("com.google.accompanist:accompanist-swiperefresh:0.24.13-rc")
 }

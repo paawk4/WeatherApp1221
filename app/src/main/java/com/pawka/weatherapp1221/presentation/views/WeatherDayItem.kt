@@ -32,16 +32,16 @@ fun WeatherDayItem(forecastDay: ForecastDay) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Column(modifier = Modifier.padding(start = 8.dp, top = 5.dp, bottom = 5.dp)) {
-                Text(text = forecastDay.dateEpoch.toString())
-                Text(text = forecastDay.day.condition.text)
+                Text(text = forecastDay.date)
+                Text(text = forecastDay.forecast.condition.text)
             }
             Text(
-                text = "${forecastDay.day.avgTemp} °C",
+                text = "${forecastDay.forecast.avgTemp} °C",
                 style = TextStyle(fontSize = 25.sp)
             )
             AsyncImage(
-                model = "https:${forecastDay.day.condition.icon}",
-                contentDescription = "im2",
+                model = "https:${forecastDay.forecast.condition.icon}",
+                contentDescription = "condition icon",
                 modifier = Modifier
                     .size(35.dp)
                     .padding(end = 8.dp)

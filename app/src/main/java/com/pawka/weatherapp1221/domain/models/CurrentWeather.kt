@@ -2,9 +2,9 @@ package com.pawka.weatherapp1221.domain.models
 
 import com.google.gson.annotations.SerializedName
 
-data class Current(
-    @SerializedName("last_updated_epoch")
-    val lastUpdatedEpoch: Int,
+data class  CurrentWeather(
+    @SerializedName("last_updated")
+    val lastUpdated: String,
     val condition: Condition,
     val humidity: Int,
     @SerializedName("is_day")

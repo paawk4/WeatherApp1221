@@ -10,7 +10,7 @@ import com.pawka.weatherapp1221.domain.models.WeatherModel
 @Composable
 fun WeatherByDaysColumn(weather: WeatherModel) {
     LazyColumn(modifier = Modifier.fillMaxWidth()) {
-        items(weather.forecast.forecastDay) {
+        items(weather.forecastWeather.forecastDay) {
             WeatherDayItem(it)
         }
     }

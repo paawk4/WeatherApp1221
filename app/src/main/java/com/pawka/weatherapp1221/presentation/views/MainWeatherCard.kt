@@ -1,5 +1,6 @@
 package com.pawka.weatherapp1221.presentation.views
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -22,7 +23,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.pawka.weatherapp1221.domain.models.WeatherModel
+import java.text.SimpleDateFormat
+import java.util.Date
 
+@SuppressLint("SimpleDateFormat")
 @Composable
 fun WeatherCard(
     weather: WeatherModel,
@@ -44,15 +48,16 @@ fun WeatherCard(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
+
                     Text(
                         modifier = Modifier.padding(top = 8.dp, start = 8.dp),
-                        text = weather.current.lastUpdatedEpoch.toString(),
+                        text = weather.currentWeather.lastUpdated,
                         style = TextStyle(fontSize = 15.sp),
                         color = Color.Black
                     )
                     AsyncImage(
-                        model = "https:${weather.current.condition.icon}",
-                        contentDescription = "im2",
+                        model = "https:${weather.currentWeather.condition.icon}",
+                        contentDescription = "condition icon",
                         modifier = Modifier
                             .size(35.dp)
                             .padding(top = 8.dp, end = 8.dp)
@@ -60,17 +65,17 @@ fun WeatherCard(
                 }
             }
             Text(
-                text = "Moscow",
+                text = "Москва",
                 style = TextStyle(fontSize = 24.sp),
                 color = Color.Black
             )
             Text(
-                text = "${weather.current.temp} °C",
+                text = "${weather.currentWeather.temp} °C",
                 style = TextStyle(fontSize = 64.sp),
                 color = Color.Black
             )
             Text(
-                text = weather.current.condition.text,
+                text = weather.currentWeather.condition.text,
                 style = TextStyle(fontSize = 16.sp),
                 color = Color.Black
             )
@@ -84,7 +89,7 @@ fun WeatherCard(
                 }) {
                     Icon(
                         imageVector = Icons.Filled.Refresh,
-                        contentDescription = "im4"
+                        contentDescription = "refresh icon"
                     )
                 }
             }
