@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
@@ -31,7 +32,11 @@ fun WeatherDayItem(forecastDay: ForecastDay) {
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Column(modifier = Modifier.padding(start = 8.dp, top = 5.dp, bottom = 5.dp)) {
+            Column(
+                modifier = Modifier
+                    .width(180.dp)
+                    .padding(start = 8.dp, top = 5.dp, bottom = 5.dp)
+            ) {
                 Text(text = forecastDay.date)
                 Text(text = forecastDay.forecast.condition.text)
             }

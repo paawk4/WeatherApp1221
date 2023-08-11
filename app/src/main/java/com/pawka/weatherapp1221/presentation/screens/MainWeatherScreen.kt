@@ -1,6 +1,7 @@
 package com.pawka.weatherapp1221.presentation.screens
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -31,6 +32,7 @@ fun MainWeatherScreen(viewModel: MainWeatherScreenViewModel = koinViewModel()) {
     }
 
     SwipeRefresh(
+        modifier = Modifier.fillMaxSize(),
         state = rememberSwipeRefreshState(isRefreshing = refreshing),
         onRefresh = {
             viewModel.requestWeather()
