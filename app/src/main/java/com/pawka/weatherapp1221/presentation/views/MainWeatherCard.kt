@@ -75,7 +75,7 @@ fun WeatherCard(
                 color = Color.Black
             )
             Text(
-                text = "${weather.currentWeather.temp} °C",
+                text = "${weather.currentWeather.temp.toInt()}°C",
                 style = TextStyle(fontSize = 64.sp),
                 color = Color.Black
             )
